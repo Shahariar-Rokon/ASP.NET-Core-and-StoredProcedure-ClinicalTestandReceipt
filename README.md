@@ -36,7 +36,7 @@ Update-Database
 To use this project, follow these steps:
 
 1. **Navigate to the app**: Open your browser and go to the URL where the app is hosted. For example, `https://localhost:44302/`.
-2. **Interact with the app**: The app has three naviagation tab, located at the ribbon. In each tab you can perform differn actions. To add a new testing unit for example **Glucose Test**. You can also the name of the test with picture in the  **Test** tab. Finally, in the **CustomerInformation** tab you can add tests to a patient and commit using jquery and stored procedure
+2. **Interact with the app**: The app has three naviagation tab, located at the ribbon. In each tab you can perform differnt actions. To add a new testing unit for example **Glucose Test**. You can also the name of the test with picture in the  **Test** tab. Finally, in the **CustomerInformation** tab you can add tests to a patient and commit using jquery and stored procedure
 3. **Explore the code**: You can open the project in Visual Studio 2022 and explore the code. The project consists of javascript, jquery and C#.
 
 ## Contributing
