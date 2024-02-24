@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ZooAppUsingSp.ViewModels.TestUnitVM>
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+
+@functions
+{
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+
+@{
+    var token = GetAntiXsrfRequestToken();
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col">
+        <h6>Add new Test Unit</h6>
+        <hr />
+        <input type="hidden" id="hiddenIdInput" value="0" />
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text"><i class="bi bi-at"></i></span>
+            <input id="testUnitInput" type="text" class="form-control" placeholder="Test Unit Name" aria-label="Test Unit Name" />
+            <button class="btn btn-outline-secondary" type="button" id="addMUButton" onclick="addTestUnit('@GetAntiXsrfRequestToken()')">Add</button>
+        </div>
+        <span class="visually-hidden" id="actionTypeName">add</span>
+    </div>
+    <div class="col">
+        <table class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th colspan="2" class="text-center">Test Unit</th>
+                </tr>
+            </thead>
+            <tbody id="mutableBody">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            @item.Name
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-sm text-warning fw-bold" data-id="@item.Id" data-name="@item.Name" onclick="editTestUnit(this)">Edit</button>
+                            <button type="button" class="btn btn-sm text-danger fw-bold" onclick="deleteTestUnit('@GetAntiXsrfRequestToken()', @item.Id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

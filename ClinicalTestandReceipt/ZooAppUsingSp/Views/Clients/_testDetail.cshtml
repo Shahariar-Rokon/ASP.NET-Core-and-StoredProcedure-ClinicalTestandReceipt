@@ -1,0 +1,26 @@
+﻿@model ZooAppUsingSp.ViewModels.TestDetailVM
+
+<tr>
+    <td>
+        <input value="@Model.Id" type="hidden" data-tag="Id" />
+        <input value="@Model.TestId" type="hidden" data-tag="TestId" />
+        <input value="@Model.TestUnitId" type="hidden" data-tag="TestUnitId" />
+        <input value="@Model.ClientHeaderId" type="hidden" data-tag="ClientHeaderId" />
+        <input value="@Model.TestName" type="text" class="form-control-plaintext" data-tag="TestName" readonly />
+    </td>
+    <td>
+        <input value="@Model.Quantity" type="text" class="form-control-plaintext" data-tag="Quantity" readonly />
+    </td>
+    <td>
+        <input value="@Model.TestUnitName" type="text" class="form-control-plaintext" data-tag="TestUnitName" readonly />
+    </td>
+    <td>
+        <input value="@Model.UnitPrice" type="text" class="form-control-plaintext" data-tag="UnitPrice" readonly />
+    </td>
+    <td>
+        <input value="@Model.TotalPrice" type="text" class="form-control-plaintext" data-tag="TotalPrice" readonly />
+    </td>
+    <td>
+        <button type="button" class="btn btn-warning" onclick="removeMe($(this))">Remove</button>
+    </td>
+</tr>
